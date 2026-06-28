@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tủ Sách Của Tôi - The Reading Zone</title>
+    <link rel="stylesheet" href="tu-sach-ca-nhan.css">
+</head>
+<body>
+
+<!-- ========================================================
+     HEADER (dùng chung - lấy nguyên từ file Word)
+     ======================================================== -->
+<header class="site-header">
+    <div class="container header-container">
+        <!-- FLEX: logo | nav | search, justify-content: space-between -->
+        <a href="index.html" class="site-logo">
+            The Reading <span>Zone</span>
+        </a>
+        <nav class="main-navigation">
+            <!-- FLEX: các link nav nằm ngang, gap: 30px -->
+            <a href="index.html"           class="nav-item">Trang Chủ</a>
+            <a href="library.html"         class="nav-item">Kho Sách</a>
+            <a href="ranking.html"         class="nav-item">Xếp Hạng</a>
+            <a href="tu-sach-ca-nhan.html" class="nav-item" style="color:var(--color-cta);">Kệ Sách Của Tôi</a>
+        </nav>
+        <div class="search-box">
+            <!-- FLEX: input + button cạnh nhau -->
+            <input type="text" id="searchInput" placeholder="Tìm kiếm sách...">
+            <button class="search-btn">Tìm</button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ========================================================
+     TIÊU ĐỀ TRANG 5
+     ======================================================== -->
+<section class="page-heading">
+    <div class="container">
+        <h1>Tủ Sách Của Tôi</h1>
+        <p>Quản lý hành trình đọc sách cá nhân của bạn</p>
+    </div>
+</section>
+
+
+<!-- ========================================================
+     BỘ LỌC TAB
+     data-filter khớp với data-status của từng card
+     ======================================================== -->
+<section>
+    <div class="container">
+        <div class="filter-tabs">
+            <!-- FLEX: các nút nằm ngang, flex-wrap xuống dòng khi màn hình nhỏ -->
+            <button class="tab-btn active" data-filter="all">Tất Cả</button>
+            <button class="tab-btn" data-filter="reading">Đang Đọc</button>
+            <button class="tab-btn" data-filter="done">Đã Xong</button>
+            <button class="tab-btn" data-filter="saved">Đọc Sau</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========================================================
+     LƯỚI SÁCH
+     GRID: repeat(auto-fit, minmax(250px,1fr)) — tự chia cột
+     gap: 30px — khoảng cách giữa các card
+     ======================================================== -->
+<section class="books-section">
+    <div class="container">
+        <div class="books-layout-grid">
+
+            <!-- ===============================================
+                 SÁCH 1 | Giáo trình | Đang đọc
+                 Ảnh: images/giaotrinh1.webp
+                 =============================================== -->
+            <div class="custom-book-card" data-status="reading">
+                <span class="status-badge badge-reading">Đang đọc</span>
+                <div class="book-cover-box"
+                     style="background-image:url('images/giaotrinh1.webp');
+                            background-size:cover; background-position:center;">
+                </div>
+                <div class="book-details">
+                    <span class="book-genre-tag">Giáo trình</span>
+                    <h3 class="title-text">Lịch Sử Đảng Cộng Sản Việt Nam</h3>
+                    <p class="author-text">Bộ Giáo Dục và Đào Tạo · 2023</p>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐ (4.5)</div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">
+                            <span>Tiến độ</span><span>60%</span>
+                        </div>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width:60%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="read-now-link">Đọc Tiếp</a>
+                </div>
+            </div>
+
+            <!-- ===============================================
+                 SÁCH 2 | Kinh dị | Đang đọc
+                 Ảnh: images/kinhdi1.jpg
+                 =============================================== -->
+            <div class="custom-book-card" data-status="reading">
+                <span class="status-badge badge-reading">Đang đọc</span>
+                <div class="book-cover-box"
+                     style="background-image:url('images/kinhdi1.jpg');
+                            background-size:cover; background-position:center;">
+                </div>
+                <div class="book-details">
+                    <span class="book-genre-tag">Kinh dị</span>
+                    <h3 class="title-text">The Conjuring</h3>
+                    <p class="author-text">James Wan · 2013</p>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐ (4.8)</div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">
+                            <span>Tiến độ</span><span>40%</span>
+                        </div>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width:40%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="read-now-link">Đọc Tiếp</a>
+                </div>
+            </div>
+
+            <!-- ===============================================
+                 SÁCH 3 | Khoa học | Đã xong
+                 Ảnh: images/khoahoc1.jpg
+                 =============================================== -->
+            <div class="custom-book-card" data-status="done">
+                <span class="status-badge badge-done">✓ Đã xong</span>
+                <div class="book-cover-box"
+                     style="background-image:url('images/khoahoc1.jpg');
+                            background-size:cover; background-position:center;">
+                </div>
+                <div class="book-details">
+                    <span class="book-genre-tag">Khoa học</span>
+                    <h3 class="title-text">Câu Chuyện Cơ Thể Con Người</h3>
+                    <p class="author-text">Daniel E. Lieberman · 2013</p>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐ (4.9)</div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">
+                            <span>Hoàn thành</span><span>100%</span>
+                        </div>
+                        <div class="progress-bg">
+                            <div class="progress-fill done" style="width:100%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="read-now-link">Đọc Lại</a>
+                </div>
+            </div>
+
+            <!-- ===============================================
+                 SÁCH 4 | Nấu ăn | Đọc sau
+                 Ảnh: images/nauan1.jpg
+                 =============================================== -->
+            <div class="custom-book-card" data-status="saved">
+                <span class="status-badge badge-saved">🔖 Đọc sau</span>
+                <div class="book-cover-box"
+                     style="background-image:url('images/nauan1.jpg');
+                            background-size:cover; background-position:center;">
+                </div>
+                <div class="book-details">
+                    <span class="book-genre-tag">Nấu ăn</span>
+                    <h3 class="title-text">Cooking Step by Step</h3>
+                    <p class="author-text">DK Publishing · 2020</p>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐ (4.6)</div>
+                    <a href="#" class="read-now-link">Đọc Ngay</a>
+                </div>
+            </div>
+
+            <!-- ===============================================
+                 SÁCH 5 | Truyện ngắn | Đọc sau
+                 Ảnh: images/truyenngan1.jpg
+                 =============================================== -->
+            <div class="custom-book-card" data-status="saved">
+                <span class="status-badge badge-saved">🔖 Đọc sau</span>
+                <div class="book-cover-box"
+                     style="background-image:url('images/truyenngan1.jpg');
+                            background-size:cover; background-position:center;">
+                </div>
+                <div class="book-details">
+                    <span class="book-genre-tag">Truyện ngắn</span>
+                    <h3 class="title-text">Những Cuộc Chạy Trốn Tình Yêu</h3>
+                    <p class="author-text">Bernhard Schlink · 2000</p>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐ (4.7)</div>
+                    <a href="#" class="read-now-link">Đọc Ngay</a>
+                </div>
+            </div>
+
+        </div><!-- /books-layout-grid -->
+    </div>
+</section>
+
+
+<!-- ========================================================
+     FOOTER (dùng chung - lấy nguyên từ file Word)
+     ======================================================== -->
+<footer class="site-footer">
+    <div class="container footer-content">
+        <p>&copy; 2026 <strong>The Reading Zone</strong></p>
+        <p>Đồ án môn Nhập môn Web (CT188)</p>
+        <p>Khoa CNTT & TT - Đại học Cần Thơ</p>
+    </div>
+</footer>
+
+<script src="tu-sach-ca-nhan.js"></script>
+</body>
+</html>
